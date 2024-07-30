@@ -4,7 +4,7 @@ import { Player } from "@/types";
 import { useActionCreators, useStateSelector } from "@/state/hooks";
 import Cross from "./Cross";
 import Circle from "./Circle";
-import { simpleGameActions } from "@/state";
+import { simpleGameActions } from "state";
 import { useState } from "react";
 import { calculateWinnerSimpleTicTacToe } from "@/lib/simpleGameLogic";
 

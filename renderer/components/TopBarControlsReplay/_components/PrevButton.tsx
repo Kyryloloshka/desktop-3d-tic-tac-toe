@@ -1,4 +1,4 @@
-import { replayActions, useActionCreators, useStateSelector } from "@/state";
+import { replayActions, useActionCreators, useStateSelector } from "state";
 import React from "react";
 
 const PrevButton = ({ isPlaying }: { isPlaying: boolean }) => {

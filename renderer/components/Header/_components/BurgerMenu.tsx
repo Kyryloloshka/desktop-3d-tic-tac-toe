@@ -1,5 +1,5 @@
 "use client";
-import { headerActions, useActionCreators, useStateSelector } from "@/state";
+import { headerActions, useActionCreators, useStateSelector } from "state";
 import React from "react";
 
 const BurgerMenu = () => {
