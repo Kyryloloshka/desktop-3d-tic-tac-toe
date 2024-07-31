@@ -6,6 +6,7 @@ import Recomendation from "components/Recomendation";
 import BotMoveHandler from "components/BotMoveHandler";
 import WinToastHandler from "components/WinToastHandler";
 import Loading from "pages/loading";
+import Head from "next/head";
 
 const ComponentPlayGame = dynamic(() => import("@/components/Model3d"), {
   ssr: false,
@@ -14,16 +15,22 @@ const ComponentPlayGame = dynamic(() => import("@/components/Model3d"), {
 
 const PlayGame = () => {
   return (
-    <div className={`overflow-hidden flex-auto flex flex-col h-full`}>
-      <Recomendation />
-      <div className="flex flex-col md:flex-row h-full flex-auto">
-        <LeftNavBar />
-        <ComponentPlayGame />
+    <>
+      <Head>
+        <title>Play game - 3D Tic Tac Toe</title>
+      </Head>
+
+      <div className={`overflow-hidden flex-auto flex flex-col h-full`}>
+        <Recomendation />
+        <div className="flex flex-col md:flex-row h-full flex-auto">
+          <LeftNavBar />
+          <ComponentPlayGame />
+        </div>
+        <Toaster />
+        <BotMoveHandler />
+        <WinToastHandler />
       </div>
-      <Toaster />
-      <BotMoveHandler />
-      <WinToastHandler />
-    </div>
+    </>
   );
 };
 

@@ -5,18 +5,19 @@ import React, { useRef } from "react";
 import Cross from "../Cross3d";
 import Box from "../Box3d";
 import Circle from "../Circle3d";
-import { usePathname } from "next/navigation";
 import * as THREE from "three";
 import PlanesGameBoard from "./PlanesGameBoard";
 import { calculateWinner } from "@/lib/gameLogic";
+import { useRouter } from "next/router";
 
 const GameModel = () => {
   const groupRef = useRef<THREE.Group>(null!);
-  const pathname = usePathname();
+  const { pathname } = useRouter();
 
   const gameState =
-    pathname?.replace(/^\/[a-z]{2}/, "") === "/replay"
-      ? useStateSelector(
+    pathname === "/replay"
+      ? // pathname?.replace(/^\/[a-z]{2}/, "") === "/replay"
+        useStateSelector(
           (state) => state.replay.gameHistory[state.replay.currentMoveIndex]
         )
       : useStateSelector((state) => state.game.gameState);

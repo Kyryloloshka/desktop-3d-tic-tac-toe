@@ -1,5 +1,4 @@
 "use client";
-import { usePathname, useRouter } from "next/navigation";
 import { useTransition } from "react";
 import {
   Select,
@@ -16,6 +15,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useRouter } from "next/router";
 
 const languages = [
   { label: "English", value: "en" },
@@ -31,10 +31,11 @@ const languages = [
 const Settings = () => {
   const [isPending, startTransition] = useTransition();
   const router = useRouter();
-  const pathname = usePathname();
+  const { pathname } = router;
   const handleLanguageChange = (value: string) => {
     startTransition(() => {
-      router.replace(`/${value}/${pathname}`);
+      // router.replace(`/${value}/${pathname}`);
+      router.replace(`${pathname}`);
     });
   };
   return (
@@ -49,10 +50,7 @@ const Settings = () => {
       <DropdownMenuContent className="bg-dark-2 p-2 mr-3 md:mr-6 z-[501] flex flex-col gap-1">
         <DropdownMenuItem>Language</DropdownMenuItem>
         <DropdownMenuGroup>
-          <Select
-            defaultValue={'en'}
-            onValueChange={handleLanguageChange}
-          >
+          <Select defaultValue={"en"} onValueChange={handleLanguageChange}>
             <SelectTrigger className="w-[180px]">
               <SelectValue placeholder="Select a language" />
             </SelectTrigger>

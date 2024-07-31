@@ -20,7 +20,7 @@ const Logo = () => {
   return (
     <Link
       draggable="false"
-      href="/"
+      href="/home"
       className="text-primary-500 lext-md md:text-lg font-semibold text-shadow-neon whitespace-nowrap"
     >
       {logoText}

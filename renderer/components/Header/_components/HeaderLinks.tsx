@@ -3,11 +3,11 @@ import { INavLink } from "@/types";
 import React from "react";
 import Link from "next/link";
 import { headerActions, useActionCreators, useStateSelector } from "state";
-import { usePathname } from "next/navigation";
+import { useRouter } from "next/router";
 
 const headerLinks = [
   {
-    route: "/",
+    route: "/home",
     label: "Home",
     translateKey: "home",
   },
@@ -38,7 +38,8 @@ const HeaderLinks = () => {
   const isOpenBurger = useStateSelector(
     (state) => state.header.isBurgerMenuOpen
   );
-  const pathname = usePathname();
+  const { pathname } = useRouter();
+
   return (
     <nav
       className={`${

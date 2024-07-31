@@ -1,6 +1,6 @@
-appId: com.example.nextron
-productName: My Nextron App
-copyright: Copyright © 2024 ddd-tic-tac-toe
+appId: com.ddd-tic-tac-toe.ua
+productName: 3D-tic-tac-toe
+copyright: Copyright © 2024 3D-tic-tac-toe
 directories:
   output: dist
   buildResources: resources
