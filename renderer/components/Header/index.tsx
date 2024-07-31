@@ -9,7 +9,7 @@ const Header = () => {
       <BurgerMenu />
       <Logo />
       <HeaderLinks />
-      <Settings />
+      {/* <Settings /> */}
     </header>
   );
 };
