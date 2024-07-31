@@ -3,11 +3,7 @@ import { useEffect, useState } from "react";
 import RestartButton from "./_components/RestartButton";
 import Square from "./_components/Square";
 import Title from "./_components/Title";
-import {
-  simpleGameActions,
-  useActionCreators,
-  useStateSelector,
-} from "state";
+import { simpleGameActions, useActionCreators, useStateSelector } from "state";
 import {
   calculateWinnerSimpleTicTacToe,
   checkSubarrayExists,
@@ -43,7 +39,7 @@ const SimpleTicTacToeGame = () => {
               if (event.key === "Enter") {
                 if (
                   enteredPassphrase.toLowerCase() ===
-                  process.env.NEXT_PUBLIC_PASSPHRASE?.toLowerCase()
+                  process.env.NEXT_PUBLIC_PASSPHRASE
                 ) {
                   actions.setIsPassphraseCorrect(true);
                 } else {

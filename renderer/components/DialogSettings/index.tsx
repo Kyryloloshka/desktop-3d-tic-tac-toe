@@ -21,6 +21,7 @@ import {
   FirstMoveFor,
   IsPlayWithBot,
   DisplayGame,
+  IsCenterAvailable,
 } from "./_components";
 import { rubik } from "pages/_app";
 
@@ -89,13 +90,16 @@ const DialogSettings = () => {
                 setSelectedFirstPlayer={setSelectedFirstPlayer}
               />
               <Separator className="col-span-5 w-full bg-dark-5" />
-              {/* <IsCenterAvailable t={t} selectedIsCenterAvailable={selectedIsCenterAvailable} setSelectedIsCenterAvailable={setSelectedIsCenterAvailable}  />
-              <Separator className="col-span-5 w-full bg-dark-5" /> */}
+              <IsCenterAvailable
+                selectedIsCenterAvailable={selectedIsCenterAvailable}
+                setSelectedIsCenterAvailable={setSelectedIsCenterAvailable}
+              />
+              <Separator className="col-span-5 w-full bg-dark-5" />
               <DisplayGame
                 displayGameAs={selectedDisplayGameAs}
                 setDisplayGameAs={setSelectedDisplayGameAs}
               />
-              <Separator className="col-span-5 w-full bg-dark-5" />
+              {/* <Separator className="col-span-5 w-full bg-dark-5" />
               <IsPlayWithBot
                 selectedIsPlayWithBot={selectedIsPlayWithBot}
                 setSelectedIsPlayWithBot={setSelectedIsPlayWithBot}
@@ -111,7 +115,7 @@ const DialogSettings = () => {
                 setSelectedDifficulty={setSelectedDifficulty}
                 selectedIsPlayWithBot={selectedIsPlayWithBot}
                 selectedDifficulty={selectedDifficulty}
-              />
+              /> */}
             </div>
           </div>
           <DialogFooter>

@@ -1,6 +1,6 @@
 {
   "extends": "../tsconfig.json",
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "public/renderer.js"],
   "exclude": ["node_modules"],
   "compilerOptions": {
     "baseUrl": ".",

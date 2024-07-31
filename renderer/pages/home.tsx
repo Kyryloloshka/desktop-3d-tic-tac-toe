@@ -3,6 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import BgProvider from "../components/BgProvider";
 import { Button } from "../components/ui/button";
+import DialogQuit from "@/components/DialogQuit";
 
 export default function HomePage() {
   return (
@@ -24,14 +25,14 @@ export default function HomePage() {
             dimension of this classic game.
           </p>
           <Link href={"/play-game"}>
-            {" "}
             <Button
               className="px-12 text-md pointer-events-auto"
               variant="neon"
             >
               Play
-            </Button>{" "}
+            </Button>
           </Link>
+          <DialogQuit />
         </div>
         <p className="absolute z-20 left-3 bottom-2 text-primary-500 text-shadow-neon">
           Desktop 0.0.1

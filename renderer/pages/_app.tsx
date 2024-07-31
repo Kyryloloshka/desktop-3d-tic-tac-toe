@@ -4,6 +4,7 @@ import "../styles/globals.css";
 import { Rubik, Rubik_Mono_One } from "next/font/google";
 import StoreProvider from "@/components/StoreProvider";
 import Header from "@/components/Header";
+import MainDragArea from "@/components/MainDragArea";
 export const rubikMonoOne = Rubik_Mono_One({
   weight: ["400"],
   subsets: ["latin", "cyrillic"],
@@ -16,7 +17,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <StoreProvider>
       <Header />
-      <Component {...pageProps} />
+      <MainDragArea>
+        <Component {...pageProps} />
+      </MainDragArea>
     </StoreProvider>
   );
 }

@@ -3,12 +3,12 @@ import React, { PropsWithChildren, useState } from "react";
 import { useToast } from "../ui/use-toast";
 import { replayActions, useActionCreators } from "state";
 import { useRouter } from "next/navigation";
-import { useLocale } from "next-intl";
+// import { useLocale } from "next-intl";
 
 const MainDragArea = (props: PropsWithChildren) => {
   const [isDragZone, setIsDropZone] = useState<boolean>(false);
-  const locale = useLocale();
-  const messages = require(`@/messages/${locale}.json`);
+  // const locale = useLocale();
+  // const messages = require(`@/messages/${locale}.json`);
   const { toast } = useToast();
   const actions = useActionCreators(replayActions);
   const router = useRouter();
@@ -86,7 +86,8 @@ const MainDragArea = (props: PropsWithChildren) => {
           alt="file"
         />
         <h2 className="text-2xl text-center text-shadow-neon text-primary-500">
-          {messages.dragFile.dragFile}
+          {/* {messages.dragFile.dragFile} */}
+          Drug file here
         </h2>
       </div>
     </main>

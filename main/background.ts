@@ -15,10 +15,10 @@ if (isProd) {
   await app.whenReady();
 
   const mainWindow = createWindow("main", {
-    width: 1000,
-    height: 730,
-    minWidth: 1000,
-    minHeight: 730,
+    width: 1100,
+    height: 810,
+    minWidth: 1100,
+    minHeight: 810,
     // fullscreen: true,
     fullscreenable: true,
     icon: path.join(__dirname, "public", "favicon.ico"),
@@ -37,7 +37,11 @@ if (isProd) {
     mainWindow.webContents.openDevTools();
   }
 })();
-
+app.whenReady().then(() => {
+  ipcMain.handle("quit", () => {
+    app.quit();
+  });
+});
 app.on("window-all-closed", () => {
   app.quit();
 });

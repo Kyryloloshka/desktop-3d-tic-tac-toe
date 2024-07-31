@@ -11,9 +11,9 @@ const WinnerMessage = () => {
     `${"Player"} ${winner} ${"is the winner"}`
   );
 
-  useEffect(() => {
-    console.log(isVisible, winner, lastWinner);
-  }, [winner, isVisible]);
+  // useEffect(() => {
+  //   console.log(isVisible, winner, lastWinner);
+  // }, [winner, isVisible]);
 
   useEffect(() => {
     if (winner && winner !== "tie" && winner !== lastWinner) {
